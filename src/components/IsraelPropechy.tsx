@@ -1,3 +1,4 @@
+'use client';
 import Logo from "./Logo";
 import ScrollDownButton from "./ScrollDownButton";
 
@@ -583,17 +584,36 @@ export default function IsraelPropechy() {
                             Overall, the most important thing I want to write is that, after learning you’re an Israelite isn’t enough, now we must continue to seek wisdom, research and get the understanding on the true Christ and not the Christ being preached in the world. Once we find the true Christ and truly understand his walk, that’s where it all begins. Christ should always be our foundation and we must be grounded in him. How can we understand Christ when we don’t understand ourselves?</p>
 
                         <p className="mt-5">References: </p>
-                        <p className="mt-5">GatheringofChrist.org   </p>
-                        <p className="mt-5">Israelitesunite.com (Recommended) </p>
-                        <p className="mt-5">Israelunite.org  </p>
-                        <p className="mt-5">King James Bible 1611 </p>
-                        <p className="mt-5">Apocrypha  </p>
-                        <p className="mt-5">Book of Jasher  </p>
-                        <p className="mt-5">Lost Tribes and the Promised Lands  </p>
-                        <p className="mt-5">Into Egypt again with Ships  </p>
-                        <p className="mt-5">Labels: Americans Argentina Brazil Columbia Cubans dominicans Haitians Hawaians Indians Jamaicans Mexicans Native Negroes panama Puerto ricans Seminole Indians Somoans West Indies </p>
+                        <p className="mt-5">GatheringofChrist.org</p>
+                        <p className="mt-5">Israelitesunite.com (Recommended)</p>
+                        <p className="mt-5">Israelunite.org</p>
+                        <p className="mt-5">King James Bible 1611</p>
+                        <p className="mt-5">Apocrypha</p>
+                        <p className="mt-5">Book of Jasher</p>
+                        <p className="mt-5">Lost Tribes and the Promised Lands</p>
+                        <p className="mt-5">Into Egypt again with Ships</p>
+                        <p className="mt-5">Labels: Americans, Argentina, Brazil, Columbia, Cubans, Dominicans, Haitians, Hawaiians, Indians, Jamaicans, Mexicans, Native Negroes, Panama, Puerto Ricans, Seminole Indians, Somoans, West Indies</p>
                         <h2 className="text-3xl mt-5">12 Tribes of Israel</h2>
 
+                        {/* Button at the very bottom */}
+                        <button 
+                            onClick={() => window.open("https://api.leadconnectorhq.com/widget/booking/Th11mUgZidyvX2QHTzcB", "_blank")} 
+                            style={{
+                                position: 'fixed',  // Keeps the button fixed in place
+                                bottom: '20px',     // Distance from the bottom of the page
+                                left: '50%',        // Center the button horizontally
+                                transform: 'translateX(-50%)', // Center the button perfectly
+                                padding: '10px 20px',
+                                backgroundColor: '#4CAF50',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                            }}
+                        >
+                            Schedule your call with us today!
+                        </button>
                     </div>
                 </div>
             </section>
