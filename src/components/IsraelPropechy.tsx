@@ -1,35 +1,5 @@
 import Logo from "./Logo";
 import ScrollDownButton from "./ScrollDownButton";
-import React, { useRef, useEffect, useState } from 'react';
-
-const BackgroundMusic = () => {
-    const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(true); // Initialize as muted
-
-    useEffect(() => {
-        const audio = audioRef.current;
-        audio.play();
-
-        return () => {
-            audio.pause();
-            audio.currentTime = 0;
-        };
-    }, []);
-
-    const handleUnmute = () => {
-        setIsMuted(false);
-        audioRef.current.muted = false; // Unmute the audio
-    };
-
-    return (
-        <div>
-            <audio ref={audioRef} src="tribe-nft-frontend-master/Anaviel_Music.mp3" loop autoPlay hidden muted={isMuted} />
-            {isMuted && <button onClick={handleUnmute}>Unmute Music</button>}
-        </div>
-    );
-};
-
-export default BackgroundMusic;
 
 export default function IsraelPropechy() {
     return (
@@ -49,7 +19,7 @@ export default function IsraelPropechy() {
                 <div className="text-left text-white">
                     <div className=" relative mb-[20px] px-[30px] pb-[30px]">
                         <h2 className="text-3xl mt-5">Full Breakdown of The 12 Tribes of Israel</h2>
-                        <p className="mt-5">Shalom, and wsg chat. All praises to Ahayah[God] [THE MOST HIGH ] in the name of Yashiya[Jesus] and Ruwach[Holy-Spirit] REPENT, SEEK THE MOST HIGH AND YOU SHALL FIND.</p>
+                        <p className="mt-5">Shalom! All praises to Ahayah[God] [THE MOST HIGH ] in the name of Yashiya[Jesus] and Ruwach[Holy-Spirit] REPENT, SEEK THE MOST HIGH AND YOU SHALL FIND.</p>
                         <h2 className="text-3xl mt-5">THROUGH PRECEPTS GET UNDERSTANDING</h2>
                         <p className="mt-5">Isa_28:10 For precept must be upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little:</p>
                         <p className="mt-5">Psa_119:104 Through thy precepts I get understanding: therefore I hate every false way.
