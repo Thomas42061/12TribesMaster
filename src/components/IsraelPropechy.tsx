@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useRef } from 'react';
 import Logo from "./Logo";
 import ScrollDownButton from "./ScrollDownButton";
 
