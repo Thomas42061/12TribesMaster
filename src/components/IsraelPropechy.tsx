@@ -616,31 +616,53 @@ export default function IsraelPropechy() {
                             Schedule your call with us today!
                         </button>
                         
-                        {/* Audio Player Logic Below */}
-                        <audio id="audio-player" />
-                        <script>
+                        // Audio Player Component (Placed at the bottom)
+                        const AudioPlayer = () => {
+                          const audioRef = useRef(null);  // Reference to the audio element
                           const audioFiles = [
-                            '2.mp3', // Replace with the actual URL for mp3(1)
-                            '3.mp3', // Replace with the actual URL for mp3(2)
-                            '4.mp3', // Replace with the actual URL for mp3(3)
-                            '5.mp3', // Replace with the actual URL for mp3(4)
+                            '/2.mp3', // Replace with the actual URL for mp3(1)
+                            '/3.mp3', // Replace with the actual URL for mp3(2)
+                            '/4.mp3', // Replace with the actual URL for mp3(3)
+                            '/5.mp3', // Replace with the actual URL for mp3(4)
                           ];
                           
                           let currentTrack = 0;
-                          const audioPlayer = document.getElementById('audio-player');
                         
-                          function playNextTrack() {
-                            audioPlayer.src = audioFiles[currentTrack];
-                            audioPlayer.play();
+                          const playNextTrack = () => {
+                            if (audioRef.current) {
+                              audioRef.current.src = audioFiles[currentTrack]; // Set the current track
+                              audioRef.current.play(); // Start playing the track
                         
-                            currentTrack = (currentTrack + 1) % audioFiles.length; // Loop back to the first track after the last one
-                          }
+                              currentTrack = (currentTrack + 1) % audioFiles.length; // Loop back to the first track after the last one
+                            }
+                          };
                         
-                          audioPlayer.addEventListener('ended', playNextTrack);
+                          useEffect(() => {
+                            // Make sure the audio player starts when the component mounts
+                            playNextTrack();
                         
-                          // Start the playback with the first track
-                          playNextTrack();
-                        </script>
+                            const audioPlayer = audioRef.current;
+                            
+                            // Add an event listener to play the next track when the current track ends
+                            if (audioPlayer) {
+                              audioPlayer.addEventListener('ended', playNextTrack);
+                            }
+                        
+                            // Cleanup the event listener when the component unmounts
+                            return () => {
+                              if (audioPlayer) {
+                                audioPlayer.removeEventListener('ended', playNextTrack);
+                              }
+                            };
+                          }, []); // Empty dependency array ensures the effect runs once after mount
+                        
+                          return (
+                            <div>
+                              {/* Audio player */}
+                              <audio ref={audioRef} />
+                            </div>
+                          );
+                        };
 
                     </div>
                 </div>
