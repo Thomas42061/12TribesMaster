@@ -620,10 +620,9 @@ export default function IsraelPropechy() {
                         const AudioPlayer = () => {
                           const audioRef = useRef(null);  // Reference to the audio element
                           const audioFiles = [
-                            '/2.mp3', // Replace with the actual URL for mp3(1)
-                            '/3.mp3', // Replace with the actual URL for mp3(2)
-                            '/4.mp3', // Replace with the actual URL for mp3(3)
-                            '/5.mp3', // Replace with the actual URL for mp3(4)
+                            'MusicThing1.mp3', // Replace with the actual URL for mp3(1)
+                            'MusicThing2.mp3', // Replace with the actual URL for mp3(2)
+                            'MusicThing3.mp3', // Replace with the actual URL for mp3(3)
                           ];
                           
                           let currentTrack = 0;
